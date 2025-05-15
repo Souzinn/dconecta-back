@@ -15,14 +15,14 @@ const plans = [
   {
     id: 2,
     name: "Standard",
-    price: "R$ 19,90/mês",
+    price: "R$ 37,38/mês",
     description: "Para equipes em crescimento",
     benefits: ["Acesso completo", "Suporte prioritário"],
   },
   {
     id: 3,
     name: "Security",
-    price: "R$ 29,90/mês",
+    price: "R$ 116,88/mês",
     description: "Para empresas que precisam de segurança e controle",
     benefits: ["Acesso completo", "Monitoramento avançado", "Suporte 24/7"],
   },
@@ -92,7 +92,7 @@ app.get("/api/plans", (req, res) => {
       },
       annual: {
         label: getAnnualPriceLabel(plan.price),
-        raw: +(getRaw(plan.price) * 12).toFixed(2),
+        raw: +((getRaw(plan.price) - 5) * 12).toFixed(2),
       },
     },
   }));
